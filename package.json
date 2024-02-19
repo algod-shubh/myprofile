@@ -1,5 +1,5 @@
 {
-  "homepage": "http://algod-shubh.github.io/shubham_dev_profile",
+  "homepage": "https://algod-shubh.github.io/dev_profile",
   "name": "shubham",
   "private": true,
   "version": "0.0.1",
@@ -8,7 +8,7 @@
     "dev": "vite",
     "build": "vite build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "preview": "vite preview",
     "start": "npm run dev"
   },

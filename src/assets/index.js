@@ -29,9 +29,9 @@ import paisabazaar from "./company/paisabazaar.png"
 import profound_tech from "./company/profound_tech.jpeg"
 
 
-import carrent from "./carrent.png";
+import carrent from "./carrentproject.png";
 import jobit from "./jobit.png";
-import tripguide from "./tripguide.png";
+import tripguide from "./tripadvisor.png";
 
 export {
   logo,

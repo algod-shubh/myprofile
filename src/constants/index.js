@@ -189,7 +189,7 @@ const projects = [
       },
     ],
     image: carrent,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/algod-shubh/car-rental-platform-project",
   },
   {
     name: "Job IT",
@@ -231,7 +231,7 @@ const projects = [
       },
     ],
     image: tripguide,
-    source_code_link: "https://github.com/",
+    source_code_link: "https://github.com/algod-shubh/travel-agency-project",
   },
 ];
 

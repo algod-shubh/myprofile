@@ -52,7 +52,7 @@ const About = () => {
         language, impassioned, enthrive well in deadline driven environment.
         Striving to leverage my innate problem solving skills through targeted
         mentorship and challenging projects. Hankering to prove my credentials
-        by contributing my bit in your widely acclaimed company.
+        by contributing my bit in your widely acclaimed organization.
       </motion.p>
 
       <div className="mt-20 flex flex-wrap gap-10 text-secondary">

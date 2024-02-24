@@ -1,12 +1,14 @@
 import React from "react";
 import { useEffect, useState, useRef } from "react";
-// import { emailjs } from "@emailjs/browser";
+import emailjs from "@emailjs/browser";
 import { styles } from "../styles";
 import { SectionWrapper } from "../hoc";
 import { fadeIn, slideIn } from "../utils/motion";
 import { EarthCanvas } from "./canvas";
 import { motion } from "framer-motion";
-
+//template_crdqoq9
+//service_3nz0v4c
+//public key -rivnQzmeVTWrmgsFN
 const Contact = () => {
   const formRef = useRef();
   const [form, setForm] = useState({
@@ -16,6 +18,37 @@ const Contact = () => {
   });
   const [loading, setloading] = useState(false);
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setForm({ ...form, [name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setloading(true);
+    emailjs
+      .send(
+        "service_3nz0v4c",
+        "template_crdqoq9",
+        {
+          from_name: form.name,
+          from_message: form.message,
+          to_email: "shubhiya@gmail.com",
+          to_name: "Shubham Arora",
+          message: form.message,
+        },
+        "rivnQzmeVTWrmgsFN"
+      )
+      .then((result) => {
+        setloading(false);
+        setForm({
+          name: "",
+          email: "",
+          message: "",
+        });
+        // c("thank you for getting in touch");
+      });
+  };
   return (
     <div className="xl:mt-10 xl:flex-row flex flex-col gap-10 overflow-hidden">
       <motion.div
@@ -31,7 +64,7 @@ const Contact = () => {
 
         <form
           ref={formRef}
-          //   onSubmit={handleSubmit}
+          onSubmit={handleSubmit}
           className="mt-12 flex flex-col gap-8"
         >
           <label className="flex flex-col">
@@ -39,7 +72,7 @@ const Contact = () => {
             <input
               type="text"
               value={form.name}
-              //   onChange={handleChange}
+              onChange={handleChange}
               name="name"
               placeholder="what's your name?"
               className="mt-5 bg-tertiary py-6 px-6 placeholder:text-secondarytext-white rounded-2x1 outlined-none font-medium outline-none"
@@ -50,7 +83,7 @@ const Contact = () => {
             <input
               type="text"
               value={form.email}
-              //   onChange={handleChange}
+              onChange={handleChange}
               name="email"
               placeholder="what's your email id?"
               className="mt-5 bg-tertiary py-6 px-6 placeholder:text-secondarytext-white rounded-2x1 outlined-none font-medium outline-none"
@@ -64,6 +97,7 @@ const Contact = () => {
               placeholder="What do you want to say?"
               name="message"
               value={form.message}
+              onChange={handleChange}
               className="text-secondary font-medium mb-4  bg-tertiary py-6 px-6"
             />
           </label>
